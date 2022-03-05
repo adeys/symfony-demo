@@ -26,8 +26,8 @@ WORKDIR /usr/src/app
 RUN apk update
 
 # Install php dependencies
-RUN apk add git icu-dev zlib-dev libzip-dev
-RUN docker-php-ext-install zip intl
+RUN apk add git icu-dev zlib-dev libzip-dev libpq-dev
+RUN docker-php-ext-install zip intl pgsql pdo_pgsql
 
 # Install nodeJS, nginx and supervisor
 RUN apk add bash 'nginx=~1.20' 'supervisor=~4.2'
